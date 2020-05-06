@@ -1,0 +1,28 @@
+{
+  "author": {
+    "name": "Thomas Ashwin DSilva",
+    "email": "thomasashwin.dsilva@outlook.com"
+  },
+  "bugs": {
+    "url": "https://github.com/thomasashwindsilva/debugging-logger/issues"
+  },
+  "dependencies": {
+    "winston": "latest"
+  },
+  "description": "node package for logger",
+  "homepage": "https://github.com/thomasashwindsilva/debugging-logger#readme",
+  "keywords": [
+    "winston",
+    "logger"
+  ],
+  "license": "MPL-2.0",
+  "name": "debugging-logger",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasashwindsilva/debugging-logger.git"
+  },
+  "scripts": {
+    "test": "npm run test"
+  },
+  "version": "0.0.3"
+}
