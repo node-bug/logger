@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [1.1.1] - 2026-04-11
 
 ### Added
+
 - Initial logger package with Winston integration
 - Basic logging functionality
 - Support for error and combined log files
@@ -18,12 +19,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Prettier configuration
 
 ### Changed
+
 - Updated package.json with development dependencies
 - Enhanced documentation in README.md
 
 ## [1.0.0] - 2026-04-11
 
 ### Added
+
 - Initial commit with basic logger functionality
 
 [1.1.1]: https://github.com/node-bug/logger/compare/1.0.0...1.1.1

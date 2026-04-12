@@ -13,6 +13,7 @@
 If you discover a security vulnerability in @nodebug/config, please email us at **nodebug@outlook.com** instead of using the issue tracker.
 
 Please include:
+
 - Description of the vulnerability
 - Steps to reproduce the issue
 - Potential impact
