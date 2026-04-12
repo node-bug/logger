@@ -17,6 +17,7 @@ jspm_packages/
 
 # Optional npm cache directory
 .npm
+.husky
 
 # Output directory
 dist
