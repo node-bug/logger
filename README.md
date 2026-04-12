@@ -82,8 +82,6 @@ Make sure to install Husky and lint-staged first:
 
 ```bash
 npm install --save-dev
-npx husky init
-npx lint-staged
 ```
 
 To lint the code:
