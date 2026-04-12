@@ -33,7 +33,7 @@ This project uses Husky for git hooks. Pre-commit hooks will automatically run l
 
 ## Code Style
 
-- **Code Style**: Follows ESLint configuration (Airbnb base + Prettier)
+- **Code Style**: Follows ESLint configuration (Prettier)
 - **Formatting**: Prettier is configured for automatic formatting
 - **Comments**: Use JSDoc for function documentation
 - **EditorConfig**: Use the provided `.editorconfig` for consistent editor settings

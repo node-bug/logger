@@ -1,12 +1,12 @@
-import { Logger } from 'winston';
+import { Logger } from 'winston'
 
-declare const log: Logger;
+declare const log: Logger
 declare function createLogger(options?: {
-  level?: string;
-  logDir?: string;
-  console?: boolean;
-  errorFilename?: string;
-  combinedFilename?: string;
-}): Logger;
+  level?: string
+  logDir?: string
+  console?: boolean
+  errorFilename?: string
+  combinedFilename?: string
+}): Logger
 
-export { createLogger, log };
+export { createLogger, log }

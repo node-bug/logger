@@ -76,15 +76,24 @@ Options:
 - `errorFilename` — file name for error logs - default: `'error.log'`
 - `combinedFilename` — file name for combined logs - default: `'combined.log'`
 
-
 ## Development
 
+Make sure to install Husky and lint-staged first:
+
+```bash
+npm install --save-dev
+npx husky init
+npx lint-staged
+```
+
 To lint the code:
+
 ```bash
 npm run lint
 ```
 
 To format the code:
+
 ```bash
 npm run format
 ```
@@ -94,6 +103,8 @@ Run tests:
 ```bash
 npm test
 ```
+
+The tests are now run with [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/).
 
 ## License
 

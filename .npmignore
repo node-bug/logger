@@ -15,7 +15,6 @@ test.js
 .prettierrc.js
 .stylelintrc
 .stylelintrc.js
-jest.config.js
 lint-staged.config.js
 husky/
 .nyc_output/
@@ -61,4 +60,6 @@ Thumbs.db
 *.temp
 
 # Package lock file
+logs/
+node_modules/
 package-lock.json
