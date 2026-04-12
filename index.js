@@ -1,66 +1,51 @@
-const fs = require('fs')
-const path = require('path')
-const {
-  createLogger: createWinstonLogger,
-  format,
-  transports,
-} = require('winston')
+import { createLogger, format, transports } from 'winston'
 
-const { colorize, combine, timestamp, printf, splat, json, simple } = format
-const DEFAULT_LOG_DIR = path.join(process.cwd(), 'logs')
+const { colorize, combine, timestamp, printf } = format
 
-function ensureLogDirectory(directory = DEFAULT_LOG_DIR) {
-  if (!fs.existsSync(directory)) {
-    fs.mkdirSync(directory, { recursive: true })
-  }
+const log = createLogger({
+  level: 'debug',
+  format: combine(format.splat(), format.simple()),
+  transports: [
+    //
+    // - Write to all logs with level `info` and below to `combined.log`
+    // - Write all logs error (and below) to `error.log`.
+    //
+    new transports.File({
+      filename: `${process.cwd()}/logs/error.log`,
+      level: 'error',
+      format: format.combine(
+        format.timestamp({
+          format: 'YYYY-MM-DD', // Optional for choosing your own timestamp format.
+        }),
+        format.json(),
+      ),
+    }),
+    new transports.File({
+      filename: `${process.cwd()}/logs/combined.log`,
+      level: 'debug',
+      format: format.combine(
+        format.timestamp({
+          format: 'YYYY-MM-DD', // Optional for choosing your own timestamp format.
+        }),
+        format.json(),
+      ),
+    }),
+  ],
+})
+
+// Define your custom format with printf.
+const myFormat = printf(
+  (info) => `${info.timestamp} ${info.level}: ${info.message}`,
+)
+//
+// If we're not in production then log to the `console`
+//
+if (process.env.NODE_ENV !== 'production') {
+  log.add(
+    new transports.Console({
+      format: combine(timestamp(), colorize(), myFormat),
+    }),
+  )
 }
 
-function createLogger(options = {}) {
-  const {
-    level = 'debug',
-    logDir = DEFAULT_LOG_DIR,
-    console = process.env.NODE_ENV !== 'production',
-    errorFilename = 'error.log',
-    combinedFilename = 'combined.log',
-  } = options
-
-  ensureLogDirectory(logDir)
-
-  const errorLogPath = path.join(logDir, errorFilename)
-  const combinedLogPath = path.join(logDir, combinedFilename)
-
-  const logger = createWinstonLogger({
-    level,
-    format: combine(splat(), simple()),
-    transports: [
-      new transports.File({
-        filename: errorLogPath,
-        level: 'error',
-        format: combine(timestamp({ format: 'YYYY-MM-DD' }), json()),
-      }),
-      new transports.File({
-        filename: combinedLogPath,
-        level: 'debug',
-        format: combine(timestamp({ format: 'YYYY-MM-DD' }), json()),
-      }),
-    ],
-  })
-
-  if (console) {
-    logger.add(
-      new transports.Console({
-        format: combine(
-          timestamp(),
-          colorize(),
-          printf((info) => `${info.timestamp} ${info.level}: ${info.message}`),
-        ),
-      }),
-    )
-  }
-
-  return logger
-}
-
-const log = createLogger()
-
-module.exports = { log, createLogger }
+export { log, createLogger }
