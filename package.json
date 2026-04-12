@@ -30,7 +30,8 @@
     "node": ">=14"
   },
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "lint": "eslint . --ext .js,.mjs"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
