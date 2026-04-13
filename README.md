@@ -28,6 +28,8 @@ import { log } from '@nodebug/logger'
 // Use the default logger
 log.info('Application started')
 log.error('Something went wrong')
+log.warn('Warning message')
+log.debug('Debug message')
 ```
 
 ### Custom Logger
