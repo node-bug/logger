@@ -104,7 +104,7 @@ Run tests:
 npm test
 ```
 
-The tests are now run with [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/).
+The tests are now run with [Jest](https://jestjs.org/)
 
 ## License
 

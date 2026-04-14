@@ -1,15 +1,14 @@
 // Test file for @nodebug/logger
 import { log, createLogger } from '../index.js'
-import { expect } from 'chai'
 
 describe('Logger', () => {
   it('should export default logger', () => {
-    expect(log).to.be.ok
+    expect(log).toBeDefined()
   })
 
   it('should export createLogger function', () => {
-    expect(createLogger).to.be.ok
-    expect(typeof createLogger).to.equal('function')
+    expect(createLogger).toBeDefined()
+    expect(typeof createLogger).toBe('function')
   })
 
   it('should be able to log messages', () => {
@@ -18,7 +17,7 @@ describe('Logger', () => {
       log.error('Error message')
       log.warn('Warning message')
       log.debug('Debug message')
-    }).not.to.throw()
+    }).not.toThrow()
   })
 
   it('should be able to create custom logger', () => {
@@ -27,7 +26,7 @@ describe('Logger', () => {
       console: false,
     })
 
-    expect(customLogger).to.be.ok
-    expect(typeof customLogger).to.equal('object')
+    expect(customLogger).toBeDefined()
+    expect(typeof customLogger).toBe('object')
   })
 })
