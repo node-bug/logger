@@ -26,11 +26,15 @@
     "url": "git+https://github.com/node-bug/logger.git"
   },
   "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
   "engines": {
     "node": ">=24"
   },
   "scripts": {
-    "test": "npx mocha tests/**/*.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "lint": "eslint .",
     "prepare": "husky && echo 'npx lint-staged' > .husky/pre-commit && chmod +x .husky/pre-commit"
   },

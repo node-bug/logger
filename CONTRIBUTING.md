@@ -7,7 +7,7 @@ Thank you for your interest in contributing! This document provides guidelines a
 1. Fork the repository
 2. Clone your fork: `git clone https://github.com/your-username/config.git`
 3. Create a feature branch: `git checkout -b feature/your-feature-name`
-4. Install dependencies: `npm install`
+4. Install dependencies: `npm install --save-dev`
 
 ## Development Workflow
 
