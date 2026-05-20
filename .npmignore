@@ -28,6 +28,9 @@ logs/
 # Documentation
 CONTRIBUTING.md
 SECURITY.md
+# Test config
+vitest.config.js
+jest.config.js
 CHANGELOG.md
 
 # Configuration files

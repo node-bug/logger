@@ -104,7 +104,7 @@ Run tests:
 npm test
 ```
 
-The tests are now run with [Jest](https://jestjs.org/)
+The tests are run with [Vitest](https://vitest.dev/).
 
 ## License
 
