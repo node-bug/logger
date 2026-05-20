@@ -28,6 +28,9 @@ build
 coverage
 
 # IDE
+# Test config
+vitest.config.js
+jest.config.js
 .vscode/
 .idea/
 *.swp
